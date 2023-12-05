@@ -9,7 +9,9 @@ root.render(
   <React.StrictMode>
     <h1>Weather App</h1>
     <App />
-    <a href="#">Open Source code</a>
+    <a href="https://github.com/chinazaaa-6th/forecast-react">
+      Open Source code
+    </a>
   </React.StrictMode>
 );
 
