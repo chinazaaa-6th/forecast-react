@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./App.css";
-
 function App() {
   const [query, seeQuery] = useState("");
   const [text, showText] = useState(false);
@@ -48,3 +47,4 @@ function App() {
     return form;
   }
 }
+export default App();
