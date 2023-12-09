@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./App.css";
-function App() {
+
+export default function App() {
   const [query, seeQuery] = useState("");
   const [text, showText] = useState(false);
   const [weather, setWeather] = useState({});
 
   function showDetail(response) {
-    showText(true);
     setWeather({
       temperature: response.data.temperature.current,
       wind: response.data.wind.speed,
       humidity: response.data.temperature.humidity,
       description: response.data.condition.description,
     });
+    showText(true);
   }
 
   function handleSubmit(event) {
@@ -25,10 +26,12 @@ function App() {
     seeQuery(event.target.value);
   }
   let form = (
-    <form onSubmit={handleSubmit}>
-      <input type="search" placeholder="Enter a city..." onChange={setCity} />
-      <input type="submit" value="Search" />
-    </form>
+    <div className="App">
+      <form onSubmit={handleSubmit}>
+        <input type="search" placeholder="Enter a city..." onChange={setCity} />
+        <input type="submit" value="Search" />
+      </form>
+    </div>
   );
 
   if (text) {
@@ -47,4 +50,3 @@ function App() {
     return form;
   }
 }
-export default App();
